@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Example</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        /* Custom CSS for chat styling */
+        .neumorphism {
+            background: #f2f2f2;
+            box-shadow: 8px 8px 16px 0 rgba(0, 0, 0, 0.2), -8px -8px 16px 0 rgba(255, 255, 255, 0.55);
+            border-radius: 10px;
+        }
+        .glassmorphism {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            border-radius: 10px;
+        }
+        .response-message {
+            background: rgba(0, 128, 0, 0.2);
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <div class="w-full h-screen flex flex-col items-center justify-center">
+        <div class="bg-white w-96 p-4 rounded-lg neumorphism">
+            <div class="bg-blue-500 text-white p-2 rounded-t-lg">
+                <h1 class="text-lg font-semibold">Chat</h1>
+            </div>
+            <div class="bg-opacity-80 bg-gray-100 p-4 rounded-lg glassmorphism">
+                <!-- Chat messages will be added here -->
+            </div>
+            <div class="bg-opacity-80 bg-gray-100 p-2 rounded-b-lg glassmorphism">
+                <div class="flex space-x-2">
+                    <input type="text" class="flex-grow px-2 py-1 border border-gray-300 rounded-lg focus:outline-none focus:ring focus:border-blue-500" id="message-input" placeholder="Type your message...">
+                    <button class="bg-blue-500 text-white px-4 py-1 rounded-lg hover:bg-blue-600 transition duration-300 ease-in-out" id="send-button">Send</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript code for chat functionality
+        document.addEventListener("DOMContentLoaded", function() {
+            const chatContainer = document.querySelector(".glassmorphism");
+            const messageInput = document.getElementById("message-input");
+            const sendButton = document.getElementById("send-button");
+
+            // Function to add a user message to the chat
+            function addUserMessage(message) {
+                const userMessage = document.createElement("div");
+                userMessage.classList.add("message", "user-message");
+                userMessage.textContent = message;
+                chatContainer.appendChild(userMessage);
+            }
+
+            // Function to add a response message to the chat
+            function addResponseMessage(message) {
+                const responseMessage = document.createElement("div");
+                responseMessage.classList.add("message", "response-message"); // Add the response class
+                responseMessage.textContent = message;
+                chatContainer.appendChild(responseMessage);
+            }
+
+            // Event listener for sending a message
+            sendButton.addEventListener("click", function() {
+                const userMessage = messageInput.value.trim();
+                if (userMessage !== "") {
+                    addUserMessage(userMessage);
+
+                    // Simulate a response (you can replace this with actual response handling)
+                    setTimeout(function() {
+                        addResponseMessage("This is a response to your message.");
+                    }, 1000);
+
+                    // Clear the input field
+                    messageInput.value = "";
+                }
+            });
+        });
+    </script>
+</body>
+</html>
