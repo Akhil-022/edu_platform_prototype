@@ -1,10 +1,48 @@
-<h1>Child Right's Platfrom</h1>
-<br>
-<br>
-<br>
-<h2 align:center>© Utkrst Astra SIH 2023 Children's Rights Platform. All rights reserved</h2>
-<br>
-<br>
-<br>
-<a href="homepage.html" align:center><h1 text-color="blue">Get Started</h1></a>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Child Rights Platform</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        /* Custom CSS for glassmorphism effect */
+        .glass-bg {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        /* Custom button styles */
+        .custom-btn {
+            background-color: #007acc;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 24px;
+            transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+        }
+        .custom-btn:hover {
+            background-color: #005b99;
+            transform: scale(1.05);
+        }
+        /* Custom footer text color */
+        .footer {
+            color: black; /* Change the text color to black */
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-r from-blue-500 to-purple-500 text-white flex flex-col justify-center items-center h-screen">
 
+    <!-- Content Section -->
+    <div class="glass-bg p-8 max-w-sm w-full text-center">
+        <h1 class="text-3xl font-bold mb-4">Child Rights Platform</h1>
+        <a href="homepage.html" class="custom-btn">Get Started</a>
+    </div>
+
+    <!-- Footer Section -->
+    <div class="footer">
+        <p>© Utkrst Astra SIH 2023 Children's Rights Platform. All rights reserved.</p>
+    </div>
+
+</body>
+</html>
