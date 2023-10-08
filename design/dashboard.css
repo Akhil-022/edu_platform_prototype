@@ -1,0 +1,12 @@
+
+        /* Custom CSS for glassmorphism */
+        .glass {
+            background: rgba(73, 130, 168, 0.795);
+            backdrop-filter: blur(10px);
+            border-radius: 10px;
+        }
+
+        .glass-header {
+            background-color: rgba(87, 161, 247, 0.726);
+            backdrop-filter: blur(10px);
+        }
