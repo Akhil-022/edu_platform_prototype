@@ -6,7 +6,7 @@
 
 body {
     font-family: 'Arial', sans-serif;
-    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKlvFZs_ZIevfooud4IkqPtKQfW4smyNZsrA&usqp=CAU');
+    background-image: url("back.png") ;
     background-size: cover;
     background-position: center;
     min-height: 100vh;
